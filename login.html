@@ -17,12 +17,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <div class="container h-100">
+    <div class="auth-card container h-100">
       <div class="row h-100 justify-content-center align-items-center">
-        <div class="card">
-          <h4 class="card-header">Iniciar Sesión</h4>
+        <div class="card p-0">
+          <h4 class="card-header text-center">Iniciar Sesión</h4>
           <div class="card-body">
-            <form data-toggle="validator" role="form" method="post" action="#">
+            <form
+              data-toggle="validator"
+              role="form"
+              method="post"
+              action="#"
+              class="d-flex flex-column gap-3 mb-2"
+            >
               <input
                 type="hidden"
                 class="hide"
@@ -36,7 +42,7 @@
                     <label>Usuario</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
+                        <span class="input-group-text icon"
                           ><i
                             class="fa fa-envelope-open-o"
                             aria-hidden="true"
@@ -63,7 +69,7 @@
                     <label>Contraseña</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
+                        <span class="input-group-text icon"
                           ><i class="fa fa-unlock" aria-hidden="true"></i
                         ></span>
                       </div>
@@ -95,7 +101,7 @@
                   <input type="hidden" name="redirect" value="" />
                   <input
                     type="submit"
-                    class="btn btn-primary btn-lg btn-block"
+                    class="btn btn-primary btn-lg btn-block w-100"
                     value="Ingresar"
                     name="submit"
                   />
@@ -103,8 +109,25 @@
               </div>
             </form>
             <div class="clear"></div>
-            <i class="fa fa-user fa-fw"></i><a href="#">Regístrate</a><br />
-            <i class="fa fa-undo fa-fw"></i><a href="#">Recuperar contraseña</a>
+            <div
+              class="d-flex justify-content-between align-items-center gap-2 mt-4"
+            >
+              <div>
+                <a href="#">
+                  <i class="fa fa-undo fa-fw"></i>
+
+                  Recuperar contraseña
+                </a>
+              </div>
+
+              <div>
+                <a class="" href="#">
+                  <i class="fa fa-user fa-fw"></i>
+
+                  Regístrate
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
