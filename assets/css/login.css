@@ -4,6 +4,17 @@ body {
 
 a {
   text-decoration: none;
+  color: #f97316;
+}
+
+.btn-orange {
+  background-color: #f97316;
+  border-color: #f97316;
+
+  &:hover {
+    background-color: #e46a13;
+    border-color: #f97316;
+  }
 }
 
 .icon {
