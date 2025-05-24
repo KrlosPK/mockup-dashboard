@@ -39,6 +39,24 @@ function getClientes() {
   }
 }
 
+function editarCliente(idx) {
+  const clientes = getClientes();
+  const cliente = clientes[idx];
+  const nuevoNombre = prompt("Editar nombre:", cliente.nombre);
+  if (nuevoNombre === null) return; // Cancelado
+  const nuevoCargo = prompt("Editar cargo:", cliente.cargo);
+  if (nuevoCargo === null) return;
+  const nuevoEstado = prompt("Editar estado (En línea/Desconectado):", cliente.estado);
+  if (nuevoEstado === null) return;
+  // Actualiza los datos
+  cliente.nombre = nuevoNombre;
+  cliente.cargo = nuevoCargo;
+  cliente.estado = nuevoEstado;
+  cliente.estadoClass = nuevoEstado === "En línea" ? "bg-gradient-success" : "bg-gradient-secondary";
+  localStorage.setItem('clientes', JSON.stringify(clientes));
+  renderClientesTabla();
+}
+
 function renderClientesTabla() {
   const clientes = getClientes();
   const tbody = document.querySelector('table.table.align-items-center tbody');
@@ -68,7 +86,7 @@ function renderClientesTabla() {
           <span class="text-secondary text-xs font-weight-bold">${cliente.fecha}</span>
         </td>
         <td class="align-middle">
-          <a href="#" class="text-secondary font-weight-bold text-xs">Editar</a>
+          <a href="#" onclick="editarCliente(${idx})" class="text-secondary font-weight-bold text-xs">Editar</a>
         </td>
       </tr>
     `;
