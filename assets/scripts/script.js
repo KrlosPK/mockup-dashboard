@@ -194,7 +194,19 @@ function renderProyectosTabla() {
   });
 }
 
+function getUsername() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const username = urlParams.get('username');
+  const userElement = document.querySelector('#username');
+
+  if (!userElement || !username) return;
+
+  userElement.innerHTML = `Hola, ${username}`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderClientesTabla();
   renderProyectosTabla();
+  getUsername()
 });
